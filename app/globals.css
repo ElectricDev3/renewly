@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #14231f;
+  --color-parchment: #fbf7ee;
+  --color-parchment-dim: #ede1c9;
+  --color-renewal: #2f6b4f;
+  --color-renewal-deep: #1f4e38;
+  --color-amber: #d79a34;
+  --color-amber-deep: #8a5f1e;
+  --color-ember: #c1462b;
+  --color-mist: #7c8d84;
+
+  --background: var(--color-parchment);
+  --foreground: var(--color-ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--color-ink);
+  --color-parchment: var(--color-parchment);
+  --color-parchment-dim: var(--color-parchment-dim);
+  --color-renewal: var(--color-renewal);
+  --color-renewal-deep: var(--color-renewal-deep);
+  --color-amber: var(--color-amber);
+  --color-amber-deep: var(--color-amber-deep);
+  --color-ember: var(--color-ember);
+  --color-mist: var(--color-mist);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+@keyframes ring-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pulse-urgent {
+    animation: ring-pulse 1.8s ease-in-out infinite;
+  }
+}
